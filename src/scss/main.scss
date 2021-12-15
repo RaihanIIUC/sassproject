@@ -1,0 +1,82 @@
+@import './resets';
+@import './variable';
+
+@function weight($weight-name){
+    @return map-get($font-weight, $weight-name );
+}
+
+@mixin flexCenter($direction) {
+
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin theme($light-theme : true) {
+  @if $light-theme{
+      background-color: lighten($primary-color , 100%);
+      color: darken($text-color , 100%);
+  }    
+}
+
+@mixin  mobile {
+ @media (min-width: $mobile) {
+  @content; 
+ }    
+}
+
+
+
+body {
+    background:$acent-color;
+    color: $text-color;
+    font-weight: weight( bold );
+        // font-weight: map-get($font-weight , regular );
+
+}
+
+.main{
+     @include flexCenter(row);
+    width : 80% - 40%;
+    width : calc( 80% - 40%);
+    margin: 0 auto;
+//    p {
+//        font-weight: map-get($font-weight , bold );
+//    }
+//      .main_paragraph {
+//        font-weight: map-get($font-weight , bold );
+//    }
+ #{&}__paragraph1 {
+       font-weight: weight(bold );
+    //    font-weight: map-get($font-weight , bold );
+       &:hover{
+           color : pink;
+       }
+   }
+
+   #{&}__paragraph2{
+    @extend .main__paragraph1;
+
+    &:hover {
+        color: $acent-color;
+    }
+}
+}
+
+
+// .main p {
+
+// }
+// p{
+
+// }
+
+.light{
+    @include theme($light-theme: true);
+
+}
+
+@include mobile{
+    flex-direction: column;
+}
