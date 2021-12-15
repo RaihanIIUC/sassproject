@@ -23,9 +23,7 @@ function Main() {
           <a href="">
             <i className="fa fa-github fa-2x"></i>
           </a>
-          <a href="">
-            <i className="fa fa-spinner fa-spin">no spinner but why</i>
-          </a>
+        
         </div>
 
         <footer>&copy; Copyright 2021 </footer>

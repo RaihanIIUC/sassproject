@@ -1,0 +1,22 @@
+$primary_color : #272727;
+$secondary_color : #ff652f;
+$normal_color : #fff;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+ 
+
+// @function set_text_color($color){
+//     @if(lighten($color) > 40%){
+//         @return #000;
+//     }@else{
+//         @return $normal_color;
+//     }
+// }
